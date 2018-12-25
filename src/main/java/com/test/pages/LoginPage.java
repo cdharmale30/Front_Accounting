@@ -57,7 +57,7 @@ public class LoginPage extends TestBase {
 		return new HomePage();
 	}*/
 	
-	public HomePage login(String uname, String passw){
+	public HomePage loginPageData(String uname, String passw){
 		
 		
 		et_username.sendKeys(uname);

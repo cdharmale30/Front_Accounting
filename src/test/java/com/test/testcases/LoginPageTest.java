@@ -1,5 +1,7 @@
 package com.test.testcases;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -16,7 +18,9 @@ public class LoginPageTest extends TestBase {
 	LoginPage loginPage;
 	HomePage homePage;
 	TestUtils testUtils;
-	String sheetName = "LoginData";
+	//ReadExcel read;
+
+	public static String sheetName = "LoginData";
 
 
 	public LoginPageTest() {
@@ -27,9 +31,11 @@ public class LoginPageTest extends TestBase {
 	@BeforeMethod
 	public void setup() {
 		initialization();
+
 		testUtils = new TestUtils();
 
 		loginPage = new LoginPage();
+
 	}
 
 	@Test(priority = 1)
@@ -45,7 +51,7 @@ public class LoginPageTest extends TestBase {
 		Assert.assertTrue(logoPresent);
 	}
 
-	@DataProvider(name="loginFrontAccountingData")
+/*	@DataProvider(name="loginFrontAccountingData")
 	public Object[][] loginFrontAccountingData() {
 		Object[][] data = TestUtils.getTestData(sheetName);
 		return data;
@@ -57,6 +63,22 @@ public class LoginPageTest extends TestBase {
 	public void validateLoginData(String username, String password) {
 		loginPage.login(username, password);
 
+	}*/
+	
+	@DataProvider(name="loginData")
+	public Object[][] loginDataProvider() throws Exception{
+		
+		Object[][] data = testUtils.getTestData(sheetName);
+		return data;
+		
+	}
+	
+	@Test(priority=2,dataProvider="loginData")
+	public void LoginPageDataTest(String username,String password ) throws IOException
+	{
+					
+		loginPage.loginPageData(username, password);
+		
 	}
 
 	/*

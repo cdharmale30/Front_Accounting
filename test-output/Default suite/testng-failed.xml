@@ -5,9 +5,11 @@
     <classes>
       <class name="com.test.testcases.LoginPageTest">
         <methods>
+          <include name="frontAccountinglogotest"/>
           <include name="tearDown"/>
+          <include name="dropDownTest"/>
           <include name="setup"/>
-          <include name="validateLoginData"/>
+          <include name="LoginPageDataTest"/>
         </methods>
       </class> <!-- com.test.testcases.LoginPageTest -->
     </classes>
