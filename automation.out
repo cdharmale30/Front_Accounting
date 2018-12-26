@@ -1,0 +1,36 @@
+2018-12-26 03:18:06 INFO  TestBase:39 - loading config file
+2018-12-26 03:18:25 INFO  TestBase:60 - open chrome brwoser
+2018-12-26 03:18:25 INFO  TestBase:39 - loading config file
+2018-12-26 03:18:33 INFO  TestBase:39 - loading config file
+2018-12-26 03:18:55 INFO  TestBase:60 - open chrome brwoser
+2018-12-26 03:18:55 INFO  TestBase:39 - loading config file
+2018-12-26 03:18:59 INFO  TestBase:39 - loading config file
+2018-12-26 03:19:01 INFO  TestBase:39 - loading config file
+2018-12-26 03:19:19 INFO  TestBase:60 - open chrome brwoser
+2018-12-26 03:19:19 INFO  TestBase:39 - loading config file
+2018-12-26 03:19:22 INFO  TestBase:39 - loading config file
+2018-12-26 03:19:23 INFO  TestBase:39 - loading config file
+2018-12-26 03:19:41 INFO  TestBase:60 - open chrome brwoser
+2018-12-26 03:19:41 INFO  TestBase:39 - loading config file
+2018-12-26 03:19:44 INFO  TestBase:39 - loading config file
+2018-12-26 03:19:45 INFO  TestBase:39 - loading config file
+2018-12-26 03:20:03 INFO  TestBase:60 - open chrome brwoser
+2018-12-26 03:20:03 INFO  TestBase:39 - loading config file
+2018-12-26 03:38:48 INFO  TestBase:27 - Initialize the Super Constructor
+2018-12-26 03:38:56 INFO  TestBase:45 - Verify the Login page Tittle
+2018-12-26 03:39:19 INFO  TestBase:83 - enter invalid and valid credintials
+2018-12-26 03:39:41 INFO  TestBase:83 - enter invalid and valid credintials
+2018-12-26 03:40:02 INFO  TestBase:83 - enter invalid and valid credintials
+2018-12-26 03:40:23 INFO  TestBase:83 - enter invalid and valid credintials
+2018-12-26 03:40:47 INFO  TestBase:83 - enter invalid and valid credintials
+2018-12-26 03:41:08 INFO  TestBase:53 - verify the logo on loginpage
+2018-12-26 03:41:29 INFO  TestBase:98 - click on drowpdown page on login
+2018-12-26 03:49:43 INFO  LoginPageTest:30 - Initialize the Super Constructor
+2018-12-26 03:49:51 INFO  LoginPageTest:48 - Verify the Login page Tittle
+2018-12-26 03:50:22 INFO  LoginPageTest:86 - enter invalid and valid credintials
+2018-12-26 03:50:44 INFO  LoginPageTest:86 - enter invalid and valid credintials
+2018-12-26 03:51:05 INFO  LoginPageTest:86 - enter invalid and valid credintials
+2018-12-26 03:51:32 INFO  LoginPageTest:86 - enter invalid and valid credintials
+2018-12-26 03:51:55 INFO  LoginPageTest:86 - enter invalid and valid credintials
+2018-12-26 03:52:20 INFO  LoginPageTest:56 - verify the logo on loginpage
+2018-12-26 03:52:42 INFO  LoginPageTest:101 - click on drowpdown page on login
