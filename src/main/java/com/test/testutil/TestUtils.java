@@ -1,20 +1,28 @@
 package com.test.testutil;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestUtils {
 	public static long PAGE_LOAD_TIMEOUT = 20;
@@ -22,12 +30,13 @@ public class TestUtils {
 	static Workbook book;
 	static Sheet sheet;
 	static WebDriver driver;
+
 	/*
 	 * public static String TESTDATA_SHEET_PATH =
 	 * "I:\\All eclipse Code7\\Front_Accounting\\" +
 	 * "src\\main\\java\\com\\test\\testdata\\Front_Accounting_XLData.xlsx";
 	 */
-
+	// -------------Xl Sheet Code-------------
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
@@ -55,11 +64,20 @@ public class TestUtils {
 		}
 		return data;
 	}
+	// -------------Xl Sheet Code-------------
+
+	// -------------Screenshot Code-------------
+
+	public static void takeScreenshotAtEndOfTest() throws IOException {
+		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String currentDir = System.getProperty("user.dir");
+		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+	}
+	// -------------Screenshot Code-------------
 
 	// ------------Brokenlink Code-----------
 	public static void brokenLinkCount() {
 		{
-			
 
 			List<WebElement> links = driver.findElements(By.tagName("a"));
 
@@ -100,5 +118,19 @@ public class TestUtils {
 	}
 
 	// ------------Brokenlink Code-----------
+
+	// ------------Explicit Wait Code-----------
+	public WebElement waitForElement(WebDriver driver, long time, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		return wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	public WebElement waitForElementWithPollingInterval(WebDriver driver, long time, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.pollingEvery(5, TimeUnit.SECONDS);
+		wait.ignoring(NoSuchElementException.class);
+		return wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	// ------------Explicit Wait Code-----------
 
 }

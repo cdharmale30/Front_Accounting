@@ -93,6 +93,12 @@ public class LoginPageTest extends TestBase {
 	public void dropDownTest() {
 		loginPage.dropDown();
 	}
+	
+	@Test(priority = 5)
+	public void verifyIncorrectPassword() {
+		loginPage.incorrectPassword();
+	}
+
 
 	@AfterMethod
 	public void tearDown() throws InterruptedException {

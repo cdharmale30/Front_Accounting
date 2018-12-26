@@ -8,10 +8,15 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import com.test.testutil.WebEventListener;
 
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties pr;
+	public  static EventFiringWebDriver e_driver;
+	public static WebEventListener eventListener;
 
 	public TestBase() {
 
@@ -47,7 +52,11 @@ public class TestBase {
 			driver = new FirefoxDriver();
 
 		}
-
+		e_driver = new EventFiringWebDriver(driver);
+		// Now create object of EventListerHandler to register it with EventFiringWebDriver
+		eventListener = new WebEventListener();
+		e_driver.register(eventListener);
+		driver = e_driver;
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		//driver.manage().timeouts().implicitlyWait(TestUtils.IMPLICITLY_WAIT_TIMEOUT, TimeUnit.SECONDS);

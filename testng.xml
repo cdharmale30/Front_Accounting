@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Front Accounting">
+	<listeners>
+		<listener class-name="com.test.report.ExtentReportNG"></listener>
+	</listeners>
+	<test name="Front Accounting Test Cases">
+		<classes>
+			<class name="com.test.testcases.LoginPageTest"></class>
+			<class name="com.test.testcases.HomePageTest"></class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
